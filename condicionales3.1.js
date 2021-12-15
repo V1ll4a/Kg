@@ -1,34 +1,37 @@
-let masa;
+
 do{
-    masa= Number (parseInt(prompt("Introsuzca su masa en kg")))
-}while(isNaN(masa)|| masa < 0)
-let estatura;
+    peso = Number (prompt("Introduzca su masa en Kg"))
+} while (isNaN (peso))
 do{
-    mestatura= Number (parseInt(prompt("Introsuzca su masa en kg")))
-}while(isNaN(estatura)|| estatura < 0)
-let imc = masa/(estatura*estatura)
-let clasificacion
-if(imc>= 40)
-{
-    clasificacion= "Obesidad III"
+    altura = Number (prompt("Introduzaca su altura en m"))
+} while (isNaN (altura))
+let altura2 = altura*altura
+let imc = peso / altura2
+if(imc< 18.5)
+    { respuesta="usted esta bajo de peso"
 }else{
-    if(imc >=35)
-    {clasificacion= "Obesidad II"
-    }else{
-        if(imc >= 30)
-        {clasificacion="Obesidad I"
-        }else{
-            if(imc >=25)
-            {clasificacion= "Preobesidad"
-            }else{
-                if(imc >= 18.5)
-                {clasificacion= "Intervalo normal"
-                }else{
-                    clasificacion= "Intervalo ponderado"
-                }               
-            }
+    if(imc <25)
+    { respuesta="su peso es normal"
+}else{
+     if(imc < 30)
+    { respuesta="preobesidad"
+ }else{
+     if(imc ==30)
+    { respuesta="obesidad"
+ }else{
+     if(imc<35 )
+     { respuesta="obesidad de clase 1"
+ }else{
+     if(imc < 40)
+     { respuesta="obesidad de clase 2"
+ }else{
+      respuesta="obesidad de clase 3"
+ }
+ }
+ }
     
-        }    
-    }
+}    
 }
-document.getElementById ("Respuesta").innerHTML= "Su IMC es"+imc+"y esta en la clasificacion"+clasificacion
+}
+document.getElementById("parrafo").innerHTML=respuesta
+console.log(imc)
