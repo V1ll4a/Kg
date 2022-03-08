@@ -4,7 +4,7 @@ do{
 } while (isNaN (peso))
 do{
     altura = Number (prompt("Introduzaca su altura en m"))
-} while (isNaN (altura))
+} while (isNaN (altura)|| peso<0)
 let altura2 = altura*altura
 let imc = peso / altura2
 if(imc< 18.5)
